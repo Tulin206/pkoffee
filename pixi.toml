@@ -1,0 +1,34 @@
+[workspace]
+preview = ["pixi-build"]
+authors = ["tulin20 <i.tulin@hzdr.de>"]
+channels = ["conda-forge"]
+name = "pkoffee"
+platforms = ["osx-arm64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+matplotlib = ">=3.10.8,<4"
+pandas = ">=2.3.3,<3"
+scipy = ">=1.17.0,<2"
+seaborn = ">=0.13.2,<0.14"
+
+[feature.dev.dependencies]
+jupyterlab = "*"
+
+[feature.py314.dependencies]
+python = ">=3.14,<3.15"
+
+[feature.py313.dependencies]
+python = ">=3.13,<3.14"
+
+[feature.py312.dependencies]
+python = ">=3.12,<3.13"
+
+[environments]
+dev = ["dev"]
+default = { features = ["default", "py313", "dev"], solve-group = "prod-313" }
+prod = { features = ["default", "py313"], solve-group = "prod-313" }
+prod312 = { features = ["default", "py312"], solve-group = "prod-312" }
+prod314 = { features = ["default", "py314"], solve-group = "prod-314" }
