@@ -22,6 +22,12 @@ classifiers = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/s3-school/pkoffee-solution"
-"Bug Tracker" = "https://github.com/s3-school/pkoffee-solution/issues"
-"Documentation" = "https://github.com/s3-school/pkoffee-solution/blob/main/README.md"
+"Homepage" = "https://github.com/s3-school/pkoffee"
+"Bug Tracker" = "https://github.com/s3-school/pkoffee/issues"
+"Documentation" = "https://github.com/s3-school/pkoffee/blob/main/README.md"
+
+[project.scripts]
+pkoffee = "pkoffee.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
